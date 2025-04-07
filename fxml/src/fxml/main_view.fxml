@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="app.MainController">
+    <top>
+        <MenuBar>
+            <Menu text="Soubor">
+                <MenuItem text="Konec" onAction="#handleExit"/>
+            </Menu>
+            <Menu text="Akce">
+                <MenuItem text="Zašifrovat" onAction="#handleEncrypt"/>
+                <MenuItem text="Dešifrovat" onAction="#handleDecrypt"/>
+                <MenuItem text="Změnit posun" onAction="#handleChangeShift"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Nezašifrovaný text:"/>
+            <TextArea fx:id="inputTextArea" prefRowCount="4"/>
+            <Label text="Zašifrovaný text:"/>
+            <TextArea fx:id="outputTextArea" prefRowCount="4"/>
+            <Label fx:id="shiftLabel" text="Posun: 3"/>
+            <HBox spacing="10">
+                <Button text="Zašifrovat" onAction="#handleEncrypt"/>
+                <Button text="Dešifrovat" onAction="#handleDecrypt"/>
+                <Button text="Změnit posun" onAction="#handleChangeShift"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

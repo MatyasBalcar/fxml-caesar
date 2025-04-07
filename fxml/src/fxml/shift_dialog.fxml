@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns:fx="http://javafx.com/fxml" fx:controller="app.ShiftDialogController">
+    <content>
+        <VBox spacing="10">
+            <Label text="Zadej nový posun:"/>
+            <TextField fx:id="shiftField"/>
+        </VBox>
+    </content>
+    <buttonTypes>
+        <ButtonType text="OK" buttonData="OK_DONE"/>
+        <ButtonType text="Zrušit" buttonData="CANCEL_CLOSE"/>
+    </buttonTypes>
+</DialogPane>
