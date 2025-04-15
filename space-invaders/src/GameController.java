@@ -4,20 +4,25 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public class GameController {
+    @FXML public Text ScoreField;
     @FXML private Canvas gameCanvas;
-
 
     public final int maxAmountOfBulletsConst = 30 ;
     public int currentAmountOfBullets = 0;
 
+    private int score = 0;
+
     private final int sizeX = 275;
     private final int sizeY = 750;
 
-    private int score = 0;
+
 
     private GraphicsContext gc;
     private Player player;
@@ -56,7 +61,9 @@ public class GameController {
 
 
     private void update() {
-        System.out.println(score);
+        //Updating score
+        ScoreField.setText("Score: " + score);
+
         // Movement
         if (keysPressed.contains(KeyCode.LEFT)) {
             player.move(-5);
