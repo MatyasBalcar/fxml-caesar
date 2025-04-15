@@ -6,32 +6,24 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
-import java.awt.*;
 import java.util.*;
-import java.util.List;
 
 public class GameController {
-    @FXML public Text ScoreField;
-    @FXML private Canvas gameCanvas;
-
-    public final int maxAmountOfBulletsConst = 30 ;
-    public int currentAmountOfBullets = 0;
-
-    private int score = 0;
-
+    public final int maxAmountOfBulletsConst = 30;
     private final int sizeX = 275;
     private final int sizeY = 750;
-
-
-
+    @FXML
+    public Text ScoreField;
+    public int currentAmountOfBullets = 0;
+    Random rand = new Random();
+    @FXML
+    private Canvas gameCanvas;
+    private int score = 0;
     private GraphicsContext gc;
     private Player player;
-    private List<Enemy> enemies = new ArrayList<>();
-    private List<Bullet> bullets = new ArrayList<>();
-    private Set<KeyCode> keysPressed = new HashSet<>();
-
-
-    Random rand = new Random();
+    private final List<Enemy> enemies = new ArrayList<>();
+    private final List<Bullet> bullets = new ArrayList<>();
+    private final Set<KeyCode> keysPressed = new HashSet<>();
 
     @FXML
     public void initialize() {
@@ -100,16 +92,16 @@ public class GameController {
         }
     }
 
-    private void removeBullet (Iterator<Bullet> iterator){
+    private void removeBullet(Iterator<Bullet> iterator) {
         iterator.remove();
         currentAmountOfBullets--;
     }
 
-    private void killEnemy(Enemy enemy){
+    private void killEnemy(Enemy enemy) {
         enemies.remove(enemy);
         //Adds a new enemy
         enemies.add(new Enemy(100 + rand.nextInt(4) * 80, 100 + rand.nextInt(8) * 40, 40, 20));
-        score ++;
+        score++;
 
     }
 

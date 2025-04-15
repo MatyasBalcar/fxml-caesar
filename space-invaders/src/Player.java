@@ -1,6 +1,9 @@
 public class Player {
-    private double x, y, width, height;
     private final double speedConstantMultiplier = 0.5;
+    private double x;
+    private final double y;
+    private final double width;
+    private final double height;
 
     public Player(double x, double y, double width, double height) {
         this.x = x;
@@ -16,8 +19,19 @@ public class Player {
     }
 
     // Getters
-    public double getX() { return x; }
-    public double getY() { return y; }
-    public double getWidth() { return width; }
-    public double getHeight() { return height; }
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
 }

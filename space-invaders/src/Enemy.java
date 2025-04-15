@@ -1,7 +1,9 @@
 public class Enemy {
-    private double x, y, width, height;
-
     private final double speedConstant = 0.25;
+    private final double x;
+    private double y;
+    private final double width;
+    private final double height;
 
     public Enemy(double x, double y, double width, double height) {
         this.x = x;
@@ -17,14 +19,25 @@ public class Enemy {
                 bullet.getY() + 10 > y;
     }
 
-    public void move(int dy){
+    public void move(int dy) {
         y += dy * speedConstant;
 
     }
 
     // Getters
-    public double getX() { return x; }
-    public double getY() { return y; }
-    public double getWidth() { return width; }
-    public double getHeight() { return height; }
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
 }

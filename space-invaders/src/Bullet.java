@@ -1,7 +1,7 @@
 public class Bullet {
-    private double x, y;
-
     private final double bulletSpeedConstant = 0.7;
+    private final double x;
+    private double y;
 
     public Bullet(double x, double y) {
         this.x = x;
@@ -12,7 +12,12 @@ public class Bullet {
         y -= 10 * bulletSpeedConstant;
     }
 
-    public double getX() { return x; }
-    public double getY() { return y; }
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
 }
 
